@@ -1,5 +1,6 @@
 <script setup>
 import tabbar from "../components/tabar.vue";
+import Table from "../components/Table.vue";
 import { ref } from "vue";
 let tabList = ref([
   {
@@ -48,6 +49,17 @@ function rightClose(index) {
       @left-close="leftClose"
       @right-close="rightClose"
     />
+    <Table>
+      <template #default>
+        <div>默认</div>
+      </template>
+      <template #header>
+        <div>header</div>
+      </template>
+      <template #footer>
+        <div>footer</div>
+      </template>
+    </Table>
   </div>
 </template>
 <style lang="scss" scoped></style>
