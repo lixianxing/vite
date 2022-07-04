@@ -1,13 +1,19 @@
-import { ref } from "vue";
-let isIndex = ref(0);
-let tabList = ref([1, 2]);
-let showDialog = ref(false);
+import { reactive, ref } from "vue";
 
 
+
+let useProps = reactive({
+    isIndex: 0,
+    showDialog: false,
+    style: '',
+    recordIndex: 0
+})
 
 function handleClick(e) {
-    isIndex.value = e;
+    useProps.isIndex = e;
 }
 
-
-export { isIndex, tabList, handleClick, showDialog };
+let useFun = {
+    handleClick
+}
+export { useProps, useFun };
